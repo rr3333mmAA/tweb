@@ -415,6 +415,11 @@ export default class ChatTopbar {
         return !!(dialog && (dialog as Dialog.dialog).pFlags.view_forum_as_messages);
       }
     }, {
+      icon: 'statistics',
+      text: 'Live Stream',
+      onClick: this.onMuteClick,
+      verify: async() => this.managers.appPeersManager.isBroadcast(this.peerId)
+    }, {
       icon: 'select',
       text: 'Chat.Menu.SelectMessages',
       onClick: () => {
